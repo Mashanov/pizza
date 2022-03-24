@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>Ресторан || пиццерия || кухня</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			* { margin: 0; padding: 0;}
+			#background {
+				width: 100%;
+				height: calc(100% - 150px);
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: repeating-linear-gradient(30deg, #ffa74f, #ffbf7f);
+				filter: blur(0.2px);
+			}
+
+			.floor {
+				background-image: url('https://cdn-icons.flaticon.com/png/512/2014/premium/2014882.png?token=exp=1648041072~hmac=044dcc4726de7312d274efb8bc12bfca');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				width: 140%;
+				height: 23%;
+				position: fixed;
+				margin: 0 auto;
+				bottom: 0;
+				left: -20%;
+				right: 0;
+			}
+
+			.window {
+				background-image: url('https://cdn-icons-png.flaticon.com/512/609/609832.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				width: 150px;
+				height: 150px;
+				position: fixed;
+				margin: 0 auto;
+				bottom: calc(50% - 75px);
+				left: 0;
+				right: 0;
+			}
+
+			#backgroundMenu {
+				background: repeating-linear-gradient(30deg, #007eff, aquamarine);
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+			
+			#backgroundTable {
+				background: repeating-linear-gradient(30deg, #5887af, #e6fbff);
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+
+			#table {
+				background-color: #e3ede9;
+    			border-top: 1px solid #878080;
+				width: 100%;
+				height: 150px;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+			}
+
+			#cash {
+				background-image: url('https://cdn-icons-png.flaticon.com/512/600/600297.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				width: 200px;
+				height: 200px;
+				position: fixed;
+				margin: 0 auto;
+				bottom: 50px;
+				left: 0;
+				right: 0;
+			}
+
+			#pause {
+				position: fixed;
+				width: 40px;
+				height: 40px;
+				background-color: #fff;
+				border: 2px solid #000;
+				top: 25px;
+				left: 25px;
+				border-radius: 10px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 150%;
+				font-family: fantasy;
+				-webkit-text-stroke-width: thin;
+				cursor: pointer;
+			}
+
+			#moneyBlock {
+				position: fixed;
+				width: 200px;
+				height: 40px;
+				background-color: #fff;
+				border: 2px solid #000;
+				top: 25px;
+				left: 85px;
+				border-radius: 10px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 150%;
+				font-family: fantasy;
+			}
+
+			.menu {
+				position: relative;
+				width: 300px;
+				height: 50px;
+				color: #000;
+				background-color: #fff;
+				border-bottom: 4px solid #b1afac;
+				border-radius: 20px;
+				text-align: center;
+				font-size: 120%;
+				line-height: 50px;
+				font-family: cursive;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				margin-bottom: 20px;
+				top: 250px;
+				cursor: pointer;
+				font-weight: 700;
+			}
+
+			#menuName {
+				position: fixed;
+				font-size: 300%;
+				font-family: cursive;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				width: 90%;
+				text-align: center;
+				top: 50px;
+				text-shadow: 5px 5px 0px #00000021;
+				color: #ff8d00;
+				background: #fff;
+				border-radius: 30px 60px;
+				border-bottom: 4px solid;
+			}
+
+			#menuLogo {
+				background-image: url('https://cdn-icons-png.flaticon.com/512/6108/6108018.png');
+				width: 150px;
+				height: 150px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				position: fixed;
+				margin: 0 auto;
+				left: 0;
+				right: 0;
+				top: 60px;
+			}
+
+			#house {
+				background-image: url('https://cdn-icons-png.flaticon.com/512/1916/1916263.png');
+				width: 100%;
+				height: 300px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				position: fixed;
+				margin: 0 auto;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+			#CuttingBoard {
+				background-image: url('https://cdn-icons-png.flaticon.com/512/2718/2718436.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				width: 90%;
+				height: 400px;
+				position: fixed;
+				margin: 0 auto;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+
+			#pizzaBoard {
+				background: #b5711e;
+				width: 60%;
+				height: 200px;
+				bottom: 15%;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				border-radius: 50%;
+				position: absolute;
+			}
+
+			#pizza {
+				background: #ff9900;
+				width: 80%;
+				height: 160px;
+				bottom: 10%;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				border-radius: 50%;
+				position: absolute;
+			}
+
+			#ingredients {
+				position: fixed;
+				top: 25px;
+				left: 25px;
+				z-index: 1;
+			}
+
+			.voiceIngredient {
+				position: relative;
+				width: 80px;
+				height: 80px;
+				border: 2px solid #8e99a1;
+				display: block;
+				float: left;
+				margin-left: 10px;
+				margin-right: 10px;
+				margin-bottom: 20px;
+				border-radius: 10px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+			}
+
+			.pepperoni {
+				position: fixed;
+				width: 30px;
+				height: 30px;
+				background-image: url('https://cdn-icons-png.flaticon.com/512/2718/2718144.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				pointer-events: none;
+			}
+
+			.mushrooms {
+				position: fixed;
+				width: 30px;
+				height: 30px;
+				background-image: url('https://cdn-icons.flaticon.com/png/512/1812/premium/1812104.png?token=exp=1648125587~hmac=c4d2a201f2c7ce2c1c8b426006260381');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				pointer-events: none;
+			}
+
+			.greenery {
+				position: fixed;
+				width: 30px;
+				height: 30px;
+				background-image: url('https://cdn-icons.flaticon.com/png/512/3196/premium/3196633.png?token=exp=1648125723~hmac=febd251312b38866f1eab27cc150a938');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				pointer-events: none;	
+			}
+
+			.tomatoes {
+				position: fixed;
+				width: 30px;
+				height: 30px;
+				background-image: url('https://cdn-icons.flaticon.com/png/512/381/premium/381069.png?token=exp=1648130070~hmac=748585288551c25a29963fd32430781e');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				pointer-events: none;	
+			}
+
+			.cucumber {
+				position: fixed;
+				width: 30px;
+				height: 30px;
+				background-image: url('https://cdn-icons-png.flaticon.com/512/201/201710.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: 50%;
+				pointer-events: none;	
+			}
+
+			#sheese {
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-image: url('https://cdn-icons-png.flaticon.com/512/1076/1076520.png');
+				background-position: 50%;
+				pointer-events: none;
+				width: 80%;
+				height: 160px;
+				bottom: 10%;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				border-radius: 50%;
+				position: absolute;
+				filter: hue-rotate(190deg);
+    			opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="background">
+			<div class="floor"></div>
+			<div class="window" style="left: 160px;"></div>
+			<div class="window" style="right: 160px;"></div>
+		</div>
+		<div id="table"></div>
+		<div id="cash"></div>
+		<div id="pause">||</div>
+		<div id="moneyBlock"><mo style="color: rgb(32, 167, 32)">$</mo> 21332</div>
+
+		<div>
+			<div id="backgroundMenu"></div>
+			<div id="menuLogo"></div>
+			<div id="house"></div>
+			<div id="menuName">Пиццерия</div>
+			<div class="menu" onclick="this.parentNode.remove()">Играть</div>
+			<div class="menu">Магазин</div>
+			<div class="menu">Пригласить друзей</div>
+			<div class="menu">Группа игры</div>
+		</div>
+
+		<div id="tableGame">
+			<div id="backgroundTable"></div>
+			<div id="ingredients">
+				<div class="voiceIngredient" onclick="document.querySelector('#pizza').style.background = '#ef8181';" style="background-image: url(https://cdn-icons-png.flaticon.com/512/4459/4459284.png)"></div>
+				<div class="voiceIngredient" onclick="ingredient = 1" style="background-image: url('https://cdn-icons-png.flaticon.com/512/2718/2718144.png')"></div>
+				<div class="voiceIngredient" onclick="ingredient = 2" style="background-image: url('https://cdn-icons.flaticon.com/png/512/1812/premium/1812104.png?token=exp=1648125587~hmac=c4d2a201f2c7ce2c1c8b426006260381')"></div>
+				<div class="voiceIngredient" onclick="ingredient = 3" style="background-image: url('https://cdn-icons.flaticon.com/png/512/3196/premium/3196633.png?token=exp=1648125723~hmac=febd251312b38866f1eab27cc150a938')"></div>
+				<div class="voiceIngredient" onclick="ingredient = 4" style="background-image: url('https://cdn-icons.flaticon.com/png/512/381/premium/381069.png?token=exp=1648130070~hmac=748585288551c25a29963fd32430781e')"></div>
+				<div class="voiceIngredient" onclick="ingredient = 5" style="background-image: url('https://cdn-icons-png.flaticon.com/512/201/201710.png');"></div>
+				<div class="voiceIngredient" onclick="document.querySelector('#sheese').style.opacity = 0.8" style="background-image: url(https://cdn-icons-png.flaticon.com/512/517/517561.png)"></div>
+			</div>
+			<div id="CuttingBoard">
+				<div id="pizzaBoard">
+					<div onclick="clickPizza ()" id="pizza"></div>
+					<div id="sheese"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+
+		var ingredient = 1,
+		ingredients = {
+
+			1: 'pepperoni',
+			2: 'mushrooms',
+			3: 'greenery',
+			4: 'tomatoes',
+			5: 'cucumber',
+		};
+
+		function clickPizza (){
+
+			document.querySelector('#tableGame').insertAdjacentHTML ('beforeend', '<div class="' + ingredients[ingredient] + '" style="left: ' + (self.event.pageX - 15) + 'px;top: ' + (self.event.pageY - 15) + 'px;transform: rotate(' + (Math.random () * 360 | 0) + 'deg)"></div>');
+		}
+
+	</script>
+</html>
