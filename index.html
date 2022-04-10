@@ -629,7 +629,7 @@
 			<div class="menu" onclick="gameStart ()">Играть</div>
 			<div class="menu" onclick="document.querySelector('shop').style.left = 0">Магазин</div>
 			<div id="sectionMenuBottom">
-				<div class="sectionMenu">
+				<div class="sectionMenu" onclick="VK.callMethod('showInviteBox')">
 					<div class="imageMenuSection" style="background-image: url('https://lh3.googleusercontent.com/pw/AM-JKLU9HH8SL4KEBw_aNHvauDE2kfFKBTiuI-Ahv5CkHPHk42KcNuIt_FlkzGvQoRsXNCOMshOLOUSShdR2CEzPdRSDAgMSct1aL47HySnfoy4fGRVIg6cij8aexupEL1HtxsAzZ-weFap8majloQgvIiHu=s512-no?authuser=0');"></div>
 					<div class="textMenuSection">Пригласить друзей</div>
 				</div>
@@ -730,6 +730,7 @@
 		</about>
 	</body>
 
+	<script src="https://vk.com/js/api/xd_connection.js?2"></script>
 	<script>
 
 		var ingredient = 1,
