@@ -676,7 +676,7 @@
 			<div class="closeShop" onclick="this.parentNode.style.left = '-100%'">✕</div>
 			<div id="moneyShopImage"></div>
 			<div id="moneyShopText">$ 0</div>
-			<div id="adsMoney" onclick="vkBridge.send('VKWebAppShowNativeAds', {ad_format:'interstitial'})">$3 за просмотр рекламы</div>
+			<div id="adsMoney" onclick="vkBridge.send('VKWebAppShowNativeAds', {ad_format:'reward'})">$3 за просмотр рекламы</div>
 			<div class="section">
 				<div class="sectionName">Ингредиенты</div>
 				<div class="blockBuy">
@@ -949,6 +949,7 @@
 					document.querySelector('#backgroundPause').style.display = 'block';
 					document.querySelector('#menu').style.display = 'block';
 					document.querySelector('#user').style.bottom = 0;
+					vkBridge.send('VKWebAppShowNativeAds', {ad_format:'interstitial'});
 
 				}, 2000);
 
