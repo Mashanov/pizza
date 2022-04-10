@@ -676,7 +676,8 @@
 			<div class="closeShop" onclick="this.parentNode.style.left = '-100%'">✕</div>
 			<div id="moneyShopImage"></div>
 			<div id="moneyShopText">$ 0</div>
-			<div id="adsMoney" onclick="vkBridge.send('VKWebAppShowNativeAds', {ad_format:'reward'})">$3 за просмотр рекламы</div>
+			<div id="adsMoney" onclick="vkBridge.send('VKWebAppShowNativeAds', {ad_format:'reward'}).then(function (){ordersMon += 3;document.querySelector('#moneyShopText').innerText = '$ ' + ordersMon; document.querySelector('#moneyBlock').innerHTML = '<mo style=\'color: rgb(32, 167, 32)\'>$ </mo>' + ordersMon;})
+.catch(error => console.log(error));">$3 за просмотр рекламы</div>
 			<div class="section">
 				<div class="sectionName">Ингредиенты</div>
 				<div class="blockBuy">
