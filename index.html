@@ -1129,14 +1129,8 @@ function nextArray ()
     }
 }
 		
-		function test (){
-			var script = document.createElement('SCRIPT');
-         script.src = "https://api.vk.com/method/users.get?v=5.131&callback=callbackFunc";
-         document.getElementsByTagName("head")[0].appendChild(script);
-         }
-		
-		function callbackFunc(result) {
-         document.write(result.response[0].first_name)
+	function test (){
+		VK.api ('users.get', {}, function (data){document.querySelector('body').innerHTML = data.response[0]});
          }
 	</script>
 </html>
