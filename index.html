@@ -726,7 +726,7 @@ about {
 		</div>
 
 		<shop>
-			<div class="NameSection">Магазин</div>
+			<div class="NameSection" onclick="VK.api('storage.get', {key: 'test'}, function(data){if (data.response != '') document.write(555)})">Магазин</div>
 			<div class="closeShop" onclick="this.parentNode.style.left = '-100%'">✕</div>
 			<div id="moneyShopImage"></div>
 			<div id="moneyShopText">$ 0</div>
