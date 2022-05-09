@@ -726,7 +726,7 @@ about {
 		</div>
 
 		<shop>
-			<div class="NameSection" onclick="VK.api('storage.get', {key: 'test'}, function(data){if (data.response == '') VK.api('storage.set', {key: 'test',value: '666'}, function(){}); else document.querySelector('body').innerHTML = data.response;})">Магазин</div>
+			<div class="NameSection" onclick="VK.api('storage.set', {key: 'test',value: '666'}, function(data){document.write(data.response)});">Магазин</div>
 			<div class="closeShop" onclick="this.parentNode.style.left = '-100%'">✕</div>
 			<div id="moneyShopImage"></div>
 			<div id="moneyShopText">$ 0</div>
