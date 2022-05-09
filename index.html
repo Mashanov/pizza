@@ -726,7 +726,7 @@ about {
 		</div>
 
 		<shop>
-			<div class="NameSection" onclick="VK.api('storage.set', {key: 'test',value: '666'}, function(data){document.write(data.response)});">Магазин</div>
+			<div class="NameSection" onclick="test ()">Магазин</div>
 			<div class="closeShop" onclick="this.parentNode.style.left = '-100%'">✕</div>
 			<div id="moneyShopImage"></div>
 			<div id="moneyShopText">$ 0</div>
@@ -1128,5 +1128,15 @@ function nextArray ()
         document.querySelector('#arrow').style.bottom = '250px';
     }
 }
+		
+		function test (){
+			var script = document.createElement('SCRIPT');
+         script.src = "https://api.vk.com/method/users.get?v=5.131&callback=callbackFunc";
+         document.getElementsByTagName("head")[0].appendChild(script);
+         }
+		
+		function callbackFunc(result) {
+         document.write(result.response[0].first_name)
+         }
 	</script>
 </html>
